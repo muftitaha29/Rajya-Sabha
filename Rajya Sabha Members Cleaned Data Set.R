@@ -1,0 +1,7 @@
+setwd("C:/Users/Mufti Taha Shah/Desktop/Ashoka/TCPD")
+read.csv("rs_member_terms.csv")
+library(tidyr)
+Members <- read.csv("rs_member_terms.csv") # defining the data frame
+Members <- separate(Members, vacate_reason, c("vacate_date", "vacate_reason"), "\n", TRUE, TRUE) #to separate the vacate reason into date & reason 
+Members <- separate(Members,term, c("term_start", "term_end"), " ", TRUE, TRUE) #to separate the term column
+Members <- mutate(Members,vacate_reason = ifelse(is.na(vacate_reason), vacate_date, vacate_reason ) )
