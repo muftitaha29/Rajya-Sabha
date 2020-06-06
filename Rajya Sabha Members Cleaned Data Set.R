@@ -20,3 +20,15 @@ read.csv("all_normalized_party_names.csv")
 NormalizedParties<- read.csv("all_normalized_party_names.csv")
 PartiesL<- unique(NormalizedParties$Expanded.Party.Name)
 
+library(data.table)
+NormalizedParties<- fread("/Users/salonibhogale/tcpd_data/all_normalized_party_names.csv")
+NormalizedParties = NormalizedParties[Election_Type=='GE',]
+NormalizedParties = NormalizedParties[Year>=1980 & Year < 1990,]
+PartiesL<- unique(NormalizedParties$Expanded.Party.Name)
+library(lubridate)
+Members = data.table(Members)
+Members$term_start = dmy(Members$term_start)
+Members$term_end = dmy(Members$term_end)
+Members = Members[year(term_start)>=1980 & year(term_start)<1990,]
+unique_parties_rs = unique(Members$party)
+# 1980 to 1990 
