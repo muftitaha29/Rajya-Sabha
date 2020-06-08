@@ -4,7 +4,18 @@ library(tidyr)
 Members <- read.csv("rs_member_terms.csv") # defining the data frame
 Members <- separate(Members, vacate_reason, c("vacate_date", "vacate_reason"), "\n", TRUE, TRUE) #to separate the vacate reason into date & reason 
 Members <- separate(Members,term, c("term_start", "term_end"), " ", TRUE, TRUE) #to separate the term column
-Members <- mutate(Members,vacate_reason = ifelse(is.na(vacate_reason), vacate_date, vacate_reason ) )
+Members <- mutate(Members,vacate_reason = ifelse(is.na(vacate_reason), vacate_date, vacate_reason ) ) #original code
+
+
+Members <- Members %>% rowwise %>%  mutate(vacate_reason = ifelse(is.na(vacate_reason), vacate_date, vacate_reason ) ) #running the operation row wise
+
+Members$vacate_date %>% as.Date() #changing type
+Members$vacate_date %>% as.numeric() %>% as.Date() #changing to numeric first nd then to date
+
+
+Members <- Members %>% rowwise %>%  mutate(vacate_date = ifelse(is.character(vacate_date), term_end, vacate_date ) )
+Members <- Members %>% rowwise %>%  mutate(vacate_date = ifelse(grep(any(LETTERS),vacate_date), term_end, vacate_date ) )
+
 filter(Members, is.na(Members$term_end))
 filter(Members, s_no==153)
 uniquestates<- unique(Members$state)
@@ -13,7 +24,6 @@ print(unique(Members$vacate_reason))
 filter(Members, is.na(Members$vacate_date))
 filter(Members, is.na(Members$term_start))
 filter(Members, is.na(Members$term_end))
-
 
 setwd("C:/Users/Mufti Taha Shah/Documents/GitHub/Rajya-Sabha")
 read.csv("all_normalized_party_names.csv")
