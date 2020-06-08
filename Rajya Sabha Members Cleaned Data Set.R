@@ -10,7 +10,7 @@ Members <- mutate(Members,vacate_reason = ifelse(is.na(vacate_reason), vacate_da
 Members <- Members %>% rowwise %>%  mutate(vacate_reason = ifelse(is.na(vacate_reason), vacate_date, vacate_reason ) ) #running the operation row wise
 
 Members$vacate_date %>% as.Date() #changing type
-Members$vacate_date %>% as.numeric() %>% as.Date() #changing to numeric first nd then to date
+Members$vacate_date %>% as.numeric() %>% as.Date() #changing to numeric first and then to date
 
 
 Members <- Members %>% rowwise %>%  mutate(vacate_date = ifelse(is.character(vacate_date), term_end, vacate_date ) )
