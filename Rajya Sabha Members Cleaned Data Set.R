@@ -29,7 +29,14 @@ setwd("C:/Users/Mufti Taha Shah/Documents/GitHub/Rajya-Sabha")
 read.csv("all_normalized_party_names.csv")
 NormalizedParties<- read.csv("all_normalized_party_names.csv")
 PartiesL<- unique(NormalizedParties$Expanded.Party.Name)
+for (val in Members$vacate_date) 
+  +     {if (val == "Retirement" |"Reorganisation of the State" |"" |"Resignation")
+    +         Members$vacate_date = Members$term_end} #running the condition with a for loop
 
+for (val in Members$vacate_date) {
+  +     if(val == "Retirement")
+    +         Members$vacate_date = Members$term_end
+    +         } #running the condition with just retirement
 library(data.table)
 NormalizedParties<- fread("/Users/salonibhogale/tcpd_data/all_normalized_party_names.csv")
 NormalizedParties = NormalizedParties[Election_Type=='GE',]
@@ -42,3 +49,19 @@ Members$term_end = dmy(Members$term_end)
 Members = Members[year(term_start)>=1980 & year(term_start)<1990,]
 unique_parties_rs = unique(Members$party)
 # 1980 to 1990 
+
+Members8 <- Members[year(term_start)>=1980 & year(term_start)<1990,]
+unique_parties_rs8 = unique(Members8$party) #unique parties in the 1980's
+
+Members7 <- Members[year(term_start)>=1970 & year(term_start)<1980,]
+unique_parties_rs7 = unique(Members7$party) #unique parties in the 1970's
+
+Members5 <- Members[year(term_start)>=1950 & year(term_start)<1960,]
+unique_parties_rs5 = unique(Members$party) #unique parties in the 1950's
+
+Members6 <- Members[year(term_start)>=1960 & year(term_start)<1970,]
+unique_parties_rs6 = unique(Members6$party) #unique parties in the 1960's
+
+NormalizedParties = NormalizedParties[NormalizedParties$Election_Type=='GE',]
+NormalizedParties8 = NormalizedParties[NormalizedParties$Year>=1980 & NormalizedParties$Year < 1990,]
+NormalizedParties8<- unique(NormalizedParties8$Expanded.Party.Name)
