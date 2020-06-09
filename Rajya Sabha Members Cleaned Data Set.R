@@ -1,6 +1,8 @@
 setwd("C:/Users/Mufti Taha Shah/Desktop/Ashoka/TCPD")
+# setwd('~/Documents/GitHub/Rajya-Sabha/')
 read.csv("rs_member_terms.csv")
 library(tidyr)
+library(dplyr)
 Members <- read.csv("rs_member_terms.csv") # defining the data frame
 Members <- separate(Members, vacate_reason, c("vacate_date", "vacate_reason"), "\n", TRUE, TRUE) #to separate the vacate reason into date & reason 
 Members <- separate(Members,term, c("term_start", "term_end"), " ", TRUE, TRUE) #to separate the term column
@@ -29,14 +31,29 @@ setwd("C:/Users/Mufti Taha Shah/Documents/GitHub/Rajya-Sabha")
 read.csv("all_normalized_party_names.csv")
 NormalizedParties<- read.csv("all_normalized_party_names.csv")
 PartiesL<- unique(NormalizedParties$Expanded.Party.Name)
-for (val in Members$vacate_date) 
-  +     {if (val == "Retirement" |"Reorganisation of the State" |"" |"Resignation")
-    +         Members$vacate_date = Members$term_end} #running the condition with a for loop
+for (val in Members$vacate_date) {
+  if (val == "Retirement" | val == "Reorganisation of the State" | val == "" |val == "Resignation"){
+    Members$vacate_date = Members$term_end} #running the condition with a for loop
+  }
+
+
+Members = data.table(Members)
+Members$vacate_date[1364]=""
+# get rid of error more neatly 
+Members[is.na(Members$vacate_date),]$vacate_date=""
+for(i in 1:nrow(Members)){
+  if(Members$vacate_date[i]=='Retirement' | Members$vacate_date[i]=='Reorganization of State' ){
+    Members$vacate_date[i] = Members$term_end[i]
+  }
+  
+}
+
 
 for (val in Members$vacate_date) {
   +     if(val == "Retirement")
     +         Members$vacate_date = Members$term_end
-    +         } #running the condition with just retirement
+    +         }
+#running the condition with just retirement
 library(data.table)
 NormalizedParties<- fread("/Users/salonibhogale/tcpd_data/all_normalized_party_names.csv")
 NormalizedParties = NormalizedParties[Election_Type=='GE',]
