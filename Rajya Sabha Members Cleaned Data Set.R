@@ -6,13 +6,17 @@ Members <- separate(Members, vacate_reason, c("vacate_date", "vacate_reason"), "
 Members <- separate(Members,term, c("term_start", "term_end"), " ", TRUE, TRUE) #to separate the term column
 Members <- Members %>% rowwise %>%  mutate(vacate_reason = ifelse(is.na(vacate_reason), vacate_date, vacate_reason ) ) #running the operation row wise
 
-filter(Members, is.na(Members$vacate_date))
-filter(Members, is.na(Members$term_start))
-filter(Members, is.na(Members$term_end))
+library(data.table)
+Members<-data.table(Members)
+print(Members[is.na(vacate_date),])
+print(Members[is.na(term_start),])
+print(Members[is.na(term_end),])
+print(Members[is.na(state),])
+
 uniquestates<- unique(Members$state)
 print(unique(Members$vacate_reason))
 
-library(data.table)
+
 
 for(i in 1:nrow(Members)){
    if(Members$vacate_date[i]=='Retirement' | Members$vacate_date[i]=='Reorganisation of the State' | Members$vacate_date[i]==''){
@@ -41,6 +45,10 @@ unique_parties_rs6 = unique(Members6$party) #unique parties in the 1960's
 
 
 
+print(Members[year(term_start)>=1950 & year(term_start)<1960 & party=='CONG(I)',])
+Members[year(term_start)>=1950 & year(term_start)<1960 & party=='CONG(I)',]$party='INC (I)'
+Members[year(term_start)>=1950 & year(term_start)<1960 & party=='Congress',]$party='INC (I)'
+Members[year(term_start)>=1950 & year(term_start)<1960 & party=='NOM.',]$party='NOMINATED'
 
 NormalizedParties<- read.csv("all_normalized_party_names.csv")
 
