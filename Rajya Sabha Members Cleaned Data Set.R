@@ -45,13 +45,36 @@ unique_parties_rs6 = unique(Members6$party) #unique parties in the 1960's
 
 
 
-print(Members[year(term_start)>=1950 & year(term_start)<1960 & party=='CONG(I)',])
-Members[year(term_start)>=1950 & year(term_start)<1960 & party=='CONG(I)',]$party='INC (I)'
-Members[year(term_start)>=1950 & year(term_start)<1960 & party=='Congress',]$party='INC (I)'
-Members[year(term_start)>=1950 & year(term_start)<1960 & party=='NOM.',]$party='NOMINATED'
 
 NormalizedParties<- read.csv("all_normalized_party_names.csv")
-
 NormalizedParties = NormalizedParties[NormalizedParties$Election_Type=='GE',]
+
 NormalizedParties8 = NormalizedParties[NormalizedParties$Year>=1980 & NormalizedParties$Year < 1990,]
 NormalizedParties8 = unique(NormalizedParties8$Expanded.Party.Name)
+
+NormalizedParties6 = NormalizedParties[NormalizedParties$Year>=1960 & NormalizedParties$Year < 1970,]
+NormalizedParties6 = unique(NormalizedParties6$Expanded.Party.Name)
+
+NormalizedParties7 = NormalizedParties[NormalizedParties$Year>=1970 & NormalizedParties$Year < 1980,]
+NormalizedParties7 = unique(NormalizedParties7$Expanded.Party.Name)
+
+
+Members8[party=='CONG(I)',]$party='INDIAN NATIOANL CONGRESS (I)'
+Members8[party=='BJP',]$party='BHARATIYA JANTA PARTY'
+Members8[party=='JD',]$party='JANATA DAL'
+Members8[party=='AIADMK',]$party='ALL INDIA ANNA DRAVIDA MUNNETRA KAZHAGAM'
+Members8[party=='CPI(M)',]$party='COMMUNIST PARTY OF INDIA (MARXIST)'
+Members8[party=='NOM.',]$party='NOMINATED'
+Members8[party=='Congress',]$party='INDIAN NATIONAL CONGRESS'
+Members8[party=='INC',]$party='INDIAN NATIONAL CONGRESS'
+Members8[party=='CPI',]$party='COMMUNIST PARTY OF INDIA'
+Members8[party=='DMK',]$party='DRAVIDA MUMMETRA KAZHAGAM'
+Members8[party=='JP',]$party='JANTA PARTY'
+Members8[party=='IND.',]$party='INDEPENDENT'
+Members8[party=='LD',]$party='LOK DAL'
+Members8[party=='UDF(N)',]$party='UNITED DEMOCRATIC FRONT'
+Members8[party=='ML',]$party='MUSLIM LEAGUE'
+Members8[party=='KC',]$party='KERALA CONGRESS'
+Members8[party=='J&KNC',]$party='JAMMU & KASHMIR NATIONAL CONFERENCE'
+Members8[party=='SAD',]$party='SHIROMANI AKALI DAL'
+#Coudn't do - AD,FB,CONG (S),RSP,AGP,TDP,O,JAN,JD(S),JD(U),SSP
