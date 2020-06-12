@@ -94,7 +94,7 @@ Members8[member_name=='Matto Shri Ghulam Rasool',]$party='JAMMU & KASHMIR NATION
 Members8[party=='JD(S)',]$party='Janata Dal (Secular)'
 Members8[party=='SSP',]$party='SIKKIMSAGRAM PARISHAD'
 
-#Coudn't do - CONG (O)
+#Coudn't do - CONG (O), BJP(isn't in the Normalized set)
 #Basavapunnaiah Shri Makkineni- State from which I am elected:	Madras, My Political Party:	Communist
 Members6[party=='ML',]$party='MUSLIM LEAGUE'
 Members6[party=='Congress',]$party='INDIAN NATIONAL CONGRESS'
@@ -112,3 +112,6 @@ Members6[party=='CPI(M)',]$party='COMMUNIST PARTY OF INDIA (MARXIST)'
 Members6[party=='BKD',]$party='BHARATIYA KRANTI DAL'
 Members6[party=='INC',]$party='INDIAN NATIONAL CONGRESS'
 Members6[party=='RPI',]$party='REPUBLICAN PARTY OF INDIA'
+Members6[party=='CONG(I)',]$party='INDIAN NATIONAL CONGRESS (I)'#INDIAN NATIONAL CONGRESS (I) wasn't in the Normalized dataset
+Members6[party=='RSP',]$party='REVOLUTIONARY SOCIALIST PARTY'
+Members6[party=='SAD',]$party='SHIROMANI AKALI DAL'
