@@ -115,3 +115,60 @@ Members6[party=='RPI',]$party='REPUBLICAN PARTY OF INDIA'
 Members6[party=='CONG(I)',]$party='INDIAN NATIONAL CONGRESS (I)'#INDIAN NATIONAL CONGRESS (I) wasn't in the Normalized dataset
 Members6[party=='RSP',]$party='REVOLUTIONARY SOCIALIST PARTY'
 Members6[party=='SAD',]$party='SHIROMANI AKALI DAL'
+
+Members9 <- Members[year(term_start)>=1990 & year(term_start)<2000,]
+unique_parties_rs9 = unique(Members9$party) #unique parties in the 1990's
+
+Members0 <- Members[year(term_start)>=2000 & year(term_start)<2010,]
+unique_parties_rs0 = unique(Members0$party) #unique parties in the 2000's
+
+Members1 <- Members[year(term_start)>=2010 & year(term_start)<2020,]
+unique_parties_rs1 = unique(Members1$party) #unique parties in the 2010's
+
+
+
+
+NormalizedParties9 = NormalizedParties[NormalizedParties$Year>=1990 & NormalizedParties$Year < 2000,]
+NormalizedParties9 = unique(NormalizedParties9$Expanded.Party.Name)
+
+NormalizedParties0 = NormalizedParties[NormalizedParties$Year>=2000 & NormalizedParties$Year < 2010,]
+NormalizedParties0 = unique(NormalizedParties0$Expanded.Party.Name)
+
+NormalizedParties1 = NormalizedParties[NormalizedParties$Year>=2010 & NormalizedParties$Year < 2020,]
+NormalizedParties1 = unique(NormalizedParties1$Expanded.Party.Name)
+
+#Members9[party=='CONG(I)',]$party='INDIAN NATIONAL CONGRESS (I)' - No INDIAN NATIONAL CONGRESS (I) in the normalized set
+#Members9[party=='TMC(M)',]$party='' - Trinamool Congress or TAMIL MAANILA CONGRESS (MOOPANAR)
+#Members9[party=='AGP',]$party=''
+#Members9[party=='RSP',]$party='RASHTRIYA SAMDARSHI PARTY'- multiple partes abbreviate to RSP
+#Members9[party=='SP',]$party='' - multiple partes abbreviate to SP
+#Members9[party=='SAD',]$party=''- there are many factions of SAD
+#Members9[party=='KC',]$party='' - KC has many factions
+#Members9[party=='SS',]$party=''
+#Members9[party=='Congress',]$party=''
+#Members9[party=='JMM',]$party='JHARKHAND MUKTI MORCHA' - has many factions
+
+Members9[party=='JD',]$party='JANATA DAL'
+Members9[party=='BJP',]$party='BHARATIYA JANATA PARTY'
+Members9[party=='DMK',]$party='DRAVIDA MUNNETRA KAZHAGAM'
+Members9[party=='IND.',]$party='INDEPENDENT'
+Members9[party=='CPI',]$party='COMMUNIST PARTY OF INDIA'
+Members9[party=='NOM',]$party='NOMINATED'
+Members9[party=='RJD',]$party='RASHTRIYA JANATA DAL'
+Members9[party=='BSP',]$party='BAHUJAN SAMAJ PARTY'
+Members9[party=='AIADMK',]$party='ALL INDIA ANNA DRAVIDA MUNNETRA KAZHAGAM'
+Members9[party=='CPI(M)',]$party='COMMUNIST PARTY OF INDIA (MARXIST)'
+Members9[party=='INC',]$party='INDIAN NATIONAL CONGRESS'
+Members9[party=='FB',]$party='FORWARD BLOCK'
+Members9[party=='AIFB',]$party='ALL INDIA FORWARD BLOCK'
+Members9[party=='RSP',]$party='RASHTRIYA SAMDARSHI PARTY'
+Members9[party=='TDP',]$party='TELUGU DESAM PARTY'
+Members9[party=='ML',]$party='MUSLIM LEAGUE'
+Members9[party=='JP',]$party='JANATA PARTY'
+Members9[party=='JD(S)',]$party='JANATA DAL (SAMAJWADI)'
+Members9[party=='J&KNC',]$party='JAMMU & KASHMIR NATIONAL CONFERENCE'
+Members9[party=='HVP',]$party='HARYANA VIKAS PARTY'
+Members9[party=='BJD',]$party='BIJU JANATA DAL'
+Members9[party=='HVC',]$party='HIMACHAL VIKASH CONGRESS'
+Members9[party=='JMM',]$party='JHARKHAND MUKTI MORCHA'
+Members9[party=='HSPDP',]$party='HILL STATE PEOPLES DEMOCRATIC PARTY'
