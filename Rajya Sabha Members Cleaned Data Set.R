@@ -38,7 +38,7 @@ Members7 <- Members[year(term_start)>=1970 & year(term_start)<1980,]
 unique_parties_rs7 = unique(Members7$party) #unique parties in the 1970's
 
 Members5 <- Members[year(term_start)>=1950 & year(term_start)<1960,]
-unique_parties_rs5 = unique(Members$party) #unique parties in the 1950's
+unique_parties_rs5 = unique(Members5$party) #unique parties in the 1950's
 
 Members6 <- Members[year(term_start)>=1960 & year(term_start)<1970,]
 unique_parties_rs6 = unique(Members6$party) #unique parties in the 1960's
