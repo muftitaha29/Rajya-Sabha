@@ -77,7 +77,8 @@ Members8[party=='ML',]$party='MUSLIM LEAGUE'
 Members8[party=='KC',]$party='KERALA CONGRESS'
 Members8[party=='J&KNC',]$party='JAMMU & KASHMIR NATIONAL CONFERENCE'
 Members8[party=='SAD',]$party='SHIROMANI AKALI DAL'
-#Coudn't do - AD,FB,CONG (S),RSP,AGP,TDP,O,JAN,JD(S),JD(U),SSP
+#Coudn't do -CONG (S),O,JAN,JD(U)
+#Two entries - Cong(S), O
 #https://rajyasabha.nic.in/rsnew/member_site/Main.aspx Mistry Smt. Roda	- Party 'Other'
 #https://rajyasabha.nic.in/rsnew/member_site/Main.aspx
 #Pandit Ravi Shankar State -Nominated My Political Party:	Other
@@ -94,7 +95,8 @@ Members8[member_name=='Matto Shri Ghulam Rasool',]$party='JAMMU & KASHMIR NATION
 Members8[party=='JD(S)',]$party='Janata Dal (Secular)'
 Members8[party=='SSP',]$party='SIKKIMSAGRAM PARISHAD'
 
-#Coudn't do - CONG (O), BJP(isn't in the Normalized set)
+#Coudn't do - CONG (O) - 10/15 entries, BJP(isn't in the Normalized set), Socialist,Communist 
+
 #Basavapunnaiah Shri Makkineni- State from which I am elected:	Madras, My Political Party:	Communist
 Members6[party=='ML',]$party='MUSLIM LEAGUE'
 Members6[party=='Congress',]$party='INDIAN NATIONAL CONGRESS'
@@ -233,3 +235,23 @@ Members1[party=='INLD',]$party='Indian National Lok Dal'
 Members1[party=='CPI',]$party='Communist Party of India'
 Members1[party=='TDP',]$party='Telugu Desam Party'
 Members1[party=='JMM',]$party='JHARKHAND MUKTI MORCHA'
+
+# Members5[party=='SCF',]$party=''
+# Members5[party=='JHKP',]$party='' - two entries
+# Members5[party=='HM',]$party='' - Angre Sardar Chandroji Sambhaji Rao	
+# Members5[party=='FB(M)',]$party=''- Banerjee Shri Satyapriya	West Bengal	
+# Members5[party=='Communist',]$party=''- Basavapunnaiah Shri Makkineni	
+# Members5[party=='O',]$party='' - 10/15 entries, have to be checked one by one
+# Members5[party=='RPI',]$party='' - two entries
+# Members5[party=='Socialist',]$party='' - two entries
+# Members5[party=='JS',]$party='' - one entry
+# Members5[party=='KMPP',]$party=''- one entry
+# Members5[party=='JAN',]$party=''- one entry
+Members5[party=='Congress',]$party='INDIAN NATIONAL CONGRESS'
+Members5[party=='CPI',]$party='Communist Party of India'
+Members5[party=='J&KNC',]$party='Jammu & Kashmir National Conference'
+Members5[party=='NOM',]$party='NOMINATED'
+Members5[party=='IND.',]$party='INDEPENDENT'
+Members5[party=='INC',]$party='INDIAN NATIONAL CONGRESS'
+Members5[party=='ML',]$party='MUSLIM LEAGUE'
+Members5[party=='CPI(M)',]$party='COMMUNIST PARTY OF INDIA (MARXIST)'
