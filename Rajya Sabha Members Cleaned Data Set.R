@@ -95,9 +95,14 @@ Members8[member_name=='Matto Shri Ghulam Rasool',]$party='JAMMU & KASHMIR NATION
 Members8[party=='JD(S)',]$party='Janata Dal (Secular)'
 Members8[party=='SSP',]$party='SIKKIMSAGRAM PARISHAD'
 
-#Coudn't do - CONG (O) - 10/15 entries, BJP(isn't in the Normalized set), Socialist,Communist 
+Members8[member_name=='Mahabir Prasad Dr.',]$party='JANTA PARTY'
+Members8[member_name=='Mahishi Dr.(Smt.) Sarojini',]$party='JANTA PARTY'
+Members8[member_name=='Reddy Shri P. Babul',]$party='JANTA PARTY'
+Members8[member_name=='Yadav Shri Hukmdeo Narain',]$party='JANTA PARTY'
 
-#Basavapunnaiah Shri Makkineni- State from which I am elected:	Madras, My Political Party:	Communist
+#Coudn't do - CONG (O) - 10/15 entries, BJP(isn't in the Normalized set), Socialist,Communist 
+#Basavapunnaiah Shri Makkineni- State from which I am elected:	Madras, My Political Party:	Communist - pdf also says Communist
+#All the members with Cong(o) have the same thing in the website pdfs, one or two have independent or just Congress.
 Members6[party=='ML',]$party='MUSLIM LEAGUE'
 Members6[party=='Congress',]$party='INDIAN NATIONAL CONGRESS'
 Members6[party=='CPI',]$party='COMMUNIST PARTY OF INDIA'
@@ -117,7 +122,8 @@ Members6[party=='RPI',]$party='REPUBLICAN PARTY OF INDIA'
 Members6[party=='CONG(I)',]$party='INDIAN NATIONAL CONGRESS (I)'#INDIAN NATIONAL CONGRESS (I) wasn't in the Normalized dataset
 Members6[party=='RSP',]$party='REVOLUTIONARY SOCIALIST PARTY'
 Members6[party=='SAD',]$party='SHIROMANI AKALI DAL'
-
+#Rajnarain Shri	- pdf says Janata party
+#Chandrasekharan Shri K.- Socialist Party (Kerala)
 Members9 <- Members[year(term_start)>=1990 & year(term_start)<2000,]
 unique_parties_rs9 = unique(Members9$party) #unique parties in the 1990's
 
@@ -140,7 +146,7 @@ NormalizedParties1 = NormalizedParties[NormalizedParties$Year>=2010 & Normalized
 NormalizedParties1 = unique(NormalizedParties1$Expanded.Party.Name)
 
 #Members9[party=='CONG(I)',]$party='INDIAN NATIONAL CONGRESS (I)' - No INDIAN NATIONAL CONGRESS (I) in the normalized set
-#Members9[party=='TMC(M)',]$party='' - Trinamool Congress or TAMIL MAANILA CONGRESS (MOOPANAR)
+#Members9[party=='TMC(M)',]$party='' - Trinamool Congress or TAMIL MAANILA CONGRESS (MOOPANAR) - Left with Khader Shri N. Abdul	& Natarajan Smt. Jayanthi
 #Members9[party=='AGP',]$party=''
 #Members9[party=='RSP',]$party='RASHTRIYA SAMDARSHI PARTY'- multiple partes abbreviate to RSP
 #Members9[party=='SP',]$party='' - multiple partes abbreviate to SP
@@ -175,6 +181,10 @@ Members9[party=='BJD',]$party='BIJU JANATA DAL'
 Members9[party=='HVC',]$party='HIMACHAL VIKASH CONGRESS'
 Members9[party=='JMM',]$party='JHARKHAND MUKTI MORCHA'
 Members9[party=='HSPDP',]$party='HILL STATE PEOPLES DEMOCRATIC PARTY'
+
+Members9[party=='AGP',]$party='ASOM GANA PARISHAD'
+Members9[member_name=='Alphonse Shri S.Peter',]$party='TAMIL MAANILA CONGRESS (MOOPANAR)'
+Members9[member_name=='Moopanar Shri G. K.',]$party='TAMIL MAANILA CONGRESS (MOOPANAR)'
 
 #Members0[party=='NCP',]$party='Nationalist Congress Party'- National or Nationalist?
 # Members0[party=='SP',]$party=''
