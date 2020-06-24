@@ -156,7 +156,10 @@ NormalizedParties1 = unique(NormalizedParties1$Expanded.Party.Name)
 #Members9[party=='Congress',]$party=''
 #Members9[party=='JMM',]$party='JHARKHAND MUKTI MORCHA' - has many factions
 #Members9[party=='NPC',]$party=''
-
+#Yadav Shri Ish Dutt- Lok Dal or SP?
+#PATEL, SHRI MUKESH R. : H.S.C.; N.C.P. (Maharashtra);
+#SETHI, SHRI ANANTA : B.Sc.; I.N.C. (Orissa);
+#QURESHI, SHRI ABDUL GAIYUR : M.A., LL.B., 'Sahitya Ratan'; I.N.C. (Madhya Pradesh);
 Members9[party=='JD',]$party='JANATA DAL'
 Members9[party=='BJP',]$party='BHARATIYA JANATA PARTY'
 Members9[party=='DMK',]$party='DRAVIDA MUNNETRA KAZHAGAM'
@@ -185,6 +188,9 @@ Members9[party=='HSPDP',]$party='HILL STATE PEOPLES DEMOCRATIC PARTY'
 Members9[party=='AGP',]$party='ASOM GANA PARISHAD'
 Members9[member_name=='Alphonse Shri S.Peter',]$party='TAMIL MAANILA CONGRESS (MOOPANAR)'
 Members9[member_name=='Moopanar Shri G. K.',]$party='TAMIL MAANILA CONGRESS (MOOPANAR)'
+Members9[party=='SP',]$party='SAMAJWADI PARTY'
+Members9[party=='SSP',]$party='SIKKIM SANGRAM PARISHAD'
+Members9[party=='SS',]$party='SHIVSENA'
 
 #Members0[party=='NCP',]$party='Nationalist Congress Party'- National or Nationalist?
 # Members0[party=='SP',]$party=''
