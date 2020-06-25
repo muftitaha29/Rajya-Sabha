@@ -193,16 +193,12 @@ Members9[party=='SSP',]$party='SIKKIM SANGRAM PARISHAD'
 Members9[party=='SS',]$party='SHIVSENA'
 
 #Members0[party=='NCP',]$party='Nationalist Congress Party'- National or Nationalist?
-# Members0[party=='SP',]$party=''
-#Members0[party=='BSP',]$party=''
-# Members0[party=='LJP',]$party=''
-# Members0[party=='SS',]$party=''
-#Members0[party=='RSP',]$party=''
-#Members0[party=='SDF',]$party=''
-#Members0[party=='BJD',]$party=''
-# Members0[party=='ABLC',]$party=''
-# Members0[party=='SAMATA',]$party=''
-# Members0[party=='N.P.F.',]$party=''
+#ADIK , SHRI GOVINDRAO : B .A . (Hons ) , LL .B . ; I.N.C. (Maharashtra); 
+#Chavan Shri Vasant, Meghe Shri Datta PATEL, SHRI MUKESH R.: N.C.P. (Maharashtra);
+#Mohite-Patil Shri Ranjitsinh Vijaysinh,Sangma Shri Thomas,Sule Smt. Supriya,Trivedi Dr. Yogendra P.,Waghmare Dr. Janardhan - Couldn't find
+#TARIQ, SHRI A. M. : Congress (Jammu and Kashmir);
+# Members0[party=='LJP',]$party='' - Ali Shri Sabir,Bihar,LJP
+#Members0[party=='RSP',]$party=''- PREMACHANDRAN, SHRI N. K. : B.Sc., LL.B.; R.S.P. (Kerala);
 #Members0[party=='CONG(I)',]$party=''
 
 
@@ -231,6 +227,16 @@ Members0[party=='JMM',]$party='JHARKHAND MUKTI MORCHA'
 Members0[party=='JD(S)',]$party='Janata Dal  (Secular)'
 Members0[party=='ML',]$party='MUSLIM LEAGUE'
 
+Members0[party=='SP',]$party='Samajwadi Party'
+Members0[party=='BSP',]$party='Bahujan Samaj Party'
+Members0[party=='SS',]$party='Shiv Sena'
+Members0[party=='RSP',]$party='Revolutionary Socialist Party'
+Members0[party=='SDF',]$party='Sikkim Democratic Front'
+Members0[party=='BJD',]$party='Biju Janata Dal'
+Members0[party=='ABLC',]$party='Akhil Bhartiya Loktantrik Congress'
+Members0[party=='SAMATA',]$party='Samata Party'
+Members0[party=='N.P.F.',]$party='Nagaland Peoples Front'
+
 # Members1[party=='NCP',]$party=''
 # Members1[party=='N.P.F.',]$party=''
 Members1[party=='INC',]$party='INDIAN NATIONAL CONGRESS'
@@ -253,16 +259,21 @@ Members1[party=='TDP',]$party='Telugu Desam Party'
 Members1[party=='JMM',]$party='JHARKHAND MUKTI MORCHA'
 
 # Members5[party=='SCF',]$party=''
+Members5[party=='SCF',]$party='Scheduled Castes Federation'
 # Members5[party=='JHKP',]$party='' - two entries
+Members5[party=='JHKP',]$party='Jharkand Party'
 # Members5[party=='HM',]$party='' - Angre Sardar Chandroji Sambhaji Rao	
+Members5[party=='HM',]$party='Hindu Mahasabha'
 # Members5[party=='FB(M)',]$party=''- Banerjee Shri Satyapriya	West Bengal	
-# Members5[party=='Communist',]$party=''- Basavapunnaiah Shri Makkineni	
+Members5[party=='FB(M)',]$party='All India Forward Bloc (Marxist)'
+# Members5[party=='Communist',]$party=''- Basavapunnaiah Shri Makkineni	- BASAVAPUNNAIAH, SHRI MAKKINENI : Communist (Andhra Pradesh);
 # Members5[party=='O',]$party='' - 10/15 entries, have to be checked one by one
-# Members5[party=='RPI',]$party='' - two entries
-# Members5[party=='Socialist',]$party='' - two entries
-# Members5[party=='JS',]$party='' - one entry
-# Members5[party=='KMPP',]$party=''- one entry
-# Members5[party=='JAN',]$party=''- one entry
+# Members5[party=='RPI',]$party='' - two entries -RAJAH, SHRI H. D. : R.P.I. (Madras now Tamil Nadu);KHOBRAGADE, SHRI BHAURAO DEWAJI : B.A., Barrister-atLaw; R .P.I .(Khobragade ) (Maharashtra )
+# Members5[party=='Socialist',]$party='' - two entries: REDDY, SHRI C. GOPALA KRISHNAMOORTHY : Marine Engineer; Socialist Party (Mysore now Karnataka);
+#SINHA, SHRI MAHESWAR PRASAD NARAIN : Socialist Party (Bihar);
+# Members5[party=='JS',]$party='' - one entry: SINGH, RAJA AJIT PRATAP : Bhartiya Jan Sangh (Uttar Pradesh);
+# Members5[party=='KMPP',]$party=''- one entry: SURYANARAYANA, SHRI KOMMAREDDI : Congress (Andhra Pradesh);
+# Members5[party=='JAN',]$party=''- one entry:VIJAYA RAJE, KUNWARANI : Janata Party (Bihar);
 Members5[party=='Congress',]$party='INDIAN NATIONAL CONGRESS'
 Members5[party=='CPI',]$party='Communist Party of India'
 Members5[party=='J&KNC',]$party='Jammu & Kashmir National Conference'
