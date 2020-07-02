@@ -22,7 +22,6 @@ for(i in 1:nrow(Members)){
    if(Members$vacate_date[i]=='Retirement' | Members$vacate_date[i]=='Reorganisation of the State' | Members$vacate_date[i]==''){
          Members$vacate_date[i] = Members$term_end[i]
        }
-    
      }
 
 library(lubridate)
@@ -222,7 +221,7 @@ Members0[party=='AITC',]$party_normalized='All India Trinamool Congress'
 Members0[party=='INLD',]$party_normalized='Indian National Lok Dal'
 Members0[party=='DMK',]$party_normalized='Dravida Munnetra Kazhagam'
 Members0[party=='SBP',]$party_normalized='Swatantra Bharat Paksha'
- Members0[party=='MNF',]$party_normalized='MIZO NATIONAL FRONT'
+Members0[party=='MNF',]$party_normalized='MIZO NATIONAL FRONT'
 Members0[party=='RLD',]$party_normalized='Rashtriya Lok Dal'
 Members0[party=='JMM',]$party_normalized='JHARKHAND MUKTI MORCHA'
 Members0[party=='JD(S)',]$party_normalized='Janata Dal  (Secular)'
@@ -310,3 +309,22 @@ Members7[party=='BKD',]$party_normalized='Bharatiya Kranti Dal'
 Members7[party=='SAD',]$party_normalized='SHIROMANI AKALI DAL'
 Members7[party=='BLD',]$party_normalized='Bharatiya Lok Dal'
 Members7[party=='PSP',]$party_normalized='Praja Socialist Party'
+
+Members_Cleaned<- rbind(Members5, Members6, Members7, Members8, Members9, Members0, Members1)
+
+membersnew<- read.csv("rs_all_members_final_3006.csv")
+entries_letter <- function(x) {
+       y <- subset(membersnew, member_name == "x%")
+       count <- nrow(unique(y$member_name))
+       return(count)
+}
+entries_letter <- function(x) {
+       y <- subset(membersnew, startsWith(member_name, x))
+       count <- nrow(unique(y$member_name))
+       return(count)
+}
+entries_letter <- function(x) {
+       y <- subset(membersnew, startsWith(member_name, x))
+       count <- length(unique(y$member_name))
+       return(count)
+  }
