@@ -313,18 +313,24 @@ Members7[party=='PSP',]$party_normalized='Praja Socialist Party'
 Members_Cleaned<- rbind(Members5, Members6, Members7, Members8, Members9, Members0, Members1)
 
 membersnew<- read.csv("rs_all_members_final_3006.csv")
-entries_letter <- function(x) {
+entries_letter <- function(x,membersnew) {
        y <- subset(membersnew, member_name == "x%")
        count <- nrow(unique(y$member_name))
        return(count)
 }
-entries_letter <- function(x) {
+entries_letter <- function(x,membersnew) {
        y <- subset(membersnew, startsWith(member_name, x))
        count <- nrow(unique(y$member_name))
        return(count)
 }
-entries_letter <- function(x) {
-       y <- subset(membersnew, startsWith(member_name, x))
+entries_letter <- function(x,membersnew) {
+       y <- subset(membersnew, startsWith(list(membersnew$member_name)[[1]], x))
        count <- length(unique(y$member_name))
        return(count)
-  }
+}
+print(entries_letter('a',membersnew))
+membersnew$first_letter = substr(membersnew$member_name,1,1)
+# aggregate this by first letter 
+# derive the count 
+# most frequently used - https://tcpd.ashoka.edu.in/wp-content/uploads/2019/09/week5-R.pdf 
+
