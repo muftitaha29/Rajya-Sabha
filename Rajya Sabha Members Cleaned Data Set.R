@@ -333,4 +333,7 @@ membersnew$first_letter = substr(membersnew$member_name,1,1)
 # aggregate this by first letter 
 # derive the count 
 # most frequently used - https://tcpd.ashoka.edu.in/wp-content/uploads/2019/09/week5-R.pdf 
+membersnew <- data.table::data.table(membersnew)
+membersnew <- distinct(membersnew, member_name, .keep_all = T)
+count<- membersnew[, .(number_of_entries= .N), by=.(first_letter)]
 
