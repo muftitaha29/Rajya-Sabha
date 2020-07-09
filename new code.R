@@ -296,3 +296,6 @@ Members1[party=='JMM',]$party_normalized='JHARKHAND MUKTI MORCHA'
 
 Members_Cleaned<- rbind(Members5, Members6, Members7, Members8, Members9, Members0, Members1)
 states<- unique(allmembers$state)
+#Madhya Bharat	Congress	1960-04-03; Ajmer and Coorg;Hathi Shri Jai Sukh Lal	Saurashtra	Congress	1968-04-03; 6 members with 'Others'; Patiala and East Punjab States Union; 
+#Manipur:-Manipur should be a centrahy-administered territory for the time being.
+#Bilaspur and Himachal Pradesh	
