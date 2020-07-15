@@ -345,7 +345,9 @@ fig
 #https://plotly.com/r/gantt/
 
 Members_Cleaned$party_normalized<- toupper(Members_Cleaned$party_normalized)
+
 y<- Members_Cleaned[,.N,by=party_normalized]
+barplot(Members_Cleaned$party_normalized,xlab="Party",ylab="Numer of Member terms served",)
 y<- table(y)
 barplot(y,xlab="Party",ylab="Numer of Member terms served",col="Members_Cleaned$party_normalized",)
 sessions<- read.csv("sessions_RS.csv")
