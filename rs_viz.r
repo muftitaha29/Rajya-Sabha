@@ -3,6 +3,12 @@ library(data.table)
 library(plotly)
 
 Members_Cleaned<-fread('rs_cleaned.csv')
+Members_Cleaned_Blank = Members_Cleaned[party_normalized=='' & party!='NOM.' & party!='O'
+                                        & party!='CONG(I)' & party!='CONG (S)' & party!='CONG(O)'&
+                                          party!='INC' & party!='Congress',]
+
+fwrite(Members_Cleaned_Blank,"rs_clean_blanks.csv")
+
 
 M3 <- Members_Cleaned[,if(.N == 3) .SD,by=name_of_member]
 M4 <- Members_Cleaned[,if(.N == 4) .SD,by=name_of_member]
