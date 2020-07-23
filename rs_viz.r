@@ -69,3 +69,33 @@ for (i in 1:nrow(nominated)){
 
  
 }
+
+
+
+
+
+
+
+#### #CODE FOR ADDING YEAR DATA IN PYTHON #### 
+
+# list_of_years = list(range(1947,2020))
+# 
+# def convert_year_to_datetime(year):
+#   return pd.to_datetime('01-01-'+ str(year), format = '%d-%m-%Y')
+
+# list_of_years_datetime = [convert_year_to_datetime(x) for x in list_of_years]
+
+# year_list = []
+
+# for i in range(0, len(cabinet_csv_file)):
+#   year_string = ''
+#   start_year = pd.to_datetime(cabinet_csv_file['appointment_begin_in_datetime'].iloc[i])
+#   end_year = pd.to_datetime(cabinet_csv_file['appointment_end_in_datetime'].iloc[i])
+#   for year in list_of_years_datetime:
+#     if year >= start_year and year<= end_year:
+#     year_string += year.strftime('%Y,')
+#   year_list.append(year_string)
+# 
+# # assigning list to a new column in the pandas dataframe
+# cabinet_csv_file['list_of_years'] = pd.Series(year_list).values
+# print(cabinet_csv_file['list_of_years'])
