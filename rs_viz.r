@@ -59,3 +59,13 @@ y<- table(y)
 barplot(y,xlab="Party",ylab="Numer of Member terms served",col="Members_Cleaned$party_normalized",)
 sessions<- read.csv("sessions_RS.csv")
 barplot(Members_Cleaned$party_normalized,xlab="Party",ylab="Numer of Member terms served")
+
+
+nominated<- subset(Members_Cleaned, party_normalized=='NOMINATED')
+nominated$years_active=''
+nominated$start_year=format(nominated$term_start, "%Y")
+nominated$vacate_year=format(nominated$vacation_date, "%Y")
+for (i in 1:nrow(nominated)){
+
+ 
+}
