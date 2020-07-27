@@ -1,3 +1,9 @@
+#Left to do:
+#have to clean four dates where century changes for vacation date changes
+#have to clean NA's for vacation dates, reasons, 
+#terms starts and term ends - Kshatriya Shri Shivpratap
+
+
 clean_members_data <- function(allmembers){
   allmembers <- separate(allmembers,term_from_to, c("term_start", "term_end"), " ", TRUE, TRUE) #to separate the term column
   allmembers$vacation_date =dmy(allmembers$vacation_date_reason)
@@ -14,6 +20,11 @@ clean_members_data <- function(allmembers){
   print(allmembers[is.na(vacation_date),]) #20 entries where vacation date is not given, reaons include:Reorganisation of the State, Resignation, Death, Seat declared vacant 
   return(allmembers)
 }
+
+allmembers[vacation_date_reason == 04/03/57, ]$vacation_date = 1957-03-04	
+allmembers[vacation_date_reason == 12/03/57, ]$vacation_date = 1957-03-12		
+allmembers[vacation_date_reason == "12/03/57", ]$vacation_date = "1957-03-12"
+
 
 get_50s_data <- function(allmembers){
   Members5 <- allmembers[year(term_start)>=1950 & year(term_start)<1960,]

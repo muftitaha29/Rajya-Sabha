@@ -15,6 +15,12 @@ M4 <- Members_Cleaned[,if(.N == 4) .SD,by=name_of_member]
 M5 <- Members_Cleaned[,if(.N == 5) .SD,by=name_of_member]
 M6 <- Members_Cleaned[,if(.N == 6) .SD,by=name_of_member]
 
+
+ggplot(M6, aes(M6$term_start, M6$name_of_member, color = M6$party_normalized, group=Item)) +
+  geom_line(size = 10) +
+  labs(x="Year", y=NULL, title="Terms Served")
+
+
 # Gantt Charts
 # Convert to dates
 df$Start <- as.Date(df$Start, format = "%m/%d/%Y")
