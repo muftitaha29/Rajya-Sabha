@@ -84,7 +84,6 @@ if (years$years[j] > nominated$term_start[i] && years$years[j] < nominated$vacat
 
 # list_of_years = list(range(1947,2020))
 # 
-years<- seq(as.Date("1952-01-01"), as.Date("2020-01-01"), by="years")
 # def convert_year_to_datetime(year):
 #   return pd.to_datetime('01-01-'+ str(year), format = '%d-%m-%Y')
 
@@ -103,6 +102,4 @@ years<- seq(as.Date("1952-01-01"), as.Date("2020-01-01"), by="years")
 # 
 # # assigning list to a new column in the pandas dataframe
 # cabinet_csv_file['list_of_years'] = pd.Series(year_list).values
-This is to create a csv
 # print(cabinet_csv_file['list_of_years']) 
-this is to take the lis of years into a new variable
