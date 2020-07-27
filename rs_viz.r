@@ -62,14 +62,18 @@ barplot(Members_Cleaned$party_normalized,xlab="Party",ylab="Numer of Member term
 
 
 nominated<- subset(Members_Cleaned, party_normalized=='NOMINATED')
-nominated$years_active=''
-nominated$start_year=format(nominated$term_start, "%Y")
-nominated$vacate_year=format(nominated$vacation_date, "%Y")
+nominated<- data.table(nominated)
+years<- seq(as.Date("1952-01-01"), as.Date("2020-01-01"), by="years")
+years<- data.table(years)
+nominated$yearlist= ''
 for (i in 1:nrow(nominated)){
-
- 
+  for (j in 1: nrow(years)){
+if (years$years[j] > nominated$term_start[i] && years$years[j] < nominated$vacation_date[i])
+  {
+  append(nominated$yearlist[i],format(years$years[j], "%Y"))
+ }
 }
-
+}
 
 
 
@@ -80,6 +84,7 @@ for (i in 1:nrow(nominated)){
 
 # list_of_years = list(range(1947,2020))
 # 
+years<- seq(as.Date("1952-01-01"), as.Date("2020-01-01"), by="years")
 # def convert_year_to_datetime(year):
 #   return pd.to_datetime('01-01-'+ str(year), format = '%d-%m-%Y')
 
@@ -98,4 +103,6 @@ for (i in 1:nrow(nominated)){
 # 
 # # assigning list to a new column in the pandas dataframe
 # cabinet_csv_file['list_of_years'] = pd.Series(year_list).values
-# print(cabinet_csv_file['list_of_years'])
+This is to create a csv
+# print(cabinet_csv_file['list_of_years']) 
+this is to take the lis of years into a new variable
