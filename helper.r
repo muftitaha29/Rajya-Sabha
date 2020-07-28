@@ -291,3 +291,22 @@ get_2010s_data <-function(allmembers){
   Members1[party=='JMM',]$party_normalized='JHARKHAND MUKTI MORCHA'
   return(Members1)
 }
+
+
+get_year_list = function(data){
+  data = Members_Cleaned
+  years<- seq(as.Date("1952-01-01"), as.Date("2020-01-01"), by="years")
+  years<- data.table(years)
+  data$yearlist= ''
+  for (i in 1:nrow(data)){
+    year_list = ''
+    for (j in 1: nrow(years)){
+      if (years$years[j] > data$term_start[i] && years$years[j] < data$vacation_date[i])
+      {
+        year_list = paste0(year_list,",",format(years$years[j], "%Y"))
+      }
+    }
+    data$yearlist[i] = year_list
+  }
+  return(data)
+}

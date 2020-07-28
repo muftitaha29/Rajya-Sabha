@@ -69,21 +69,8 @@ barplot(Members_Cleaned$party_normalized,xlab="Party",ylab="Numer of Member term
 
 nominated<- subset(Members_Cleaned, party_normalized=='NOMINATED')
 nominated<- data.table(nominated)
-years<- seq(as.Date("1952-01-01"), as.Date("2020-01-01"), by="years")
-years<- data.table(years)
-nominated$yearlist= ''
-for (i in 1:nrow(nominated)){
-  year_list = ''
-  for (j in 1: nrow(years)){
-    if (years$years[j] > nominated$term_start[i] && years$years[j] < nominated$vacation_date[i])
-      {
-      year_list = paste0(year_list,",",format(years$years[j], "%Y"))
-      }
-  }
-  nominated$yearlist[i] = year_list
-}
-
-
+# added get_year_list script to helper.r 
+nominated_members_with_year_list = get_year_list(nominated)
 
 
 
