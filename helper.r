@@ -293,8 +293,7 @@ get_2010s_data <-function(allmembers){
 }
 
 
-get_year_list = function(data){
-  data = Members_Cleaned
+get_year_list <- function(data){
   years<- seq(as.Date("1952-01-01"), as.Date("2020-01-01"), by="years")
   years<- data.table(years)
   data$yearlist= ''
@@ -309,4 +308,22 @@ get_year_list = function(data){
     data$yearlist[i] = year_list
   }
   return(data)
+}
+
+
+get_year_wise_count <- function(data){
+  years<- seq(as.Date("1952-01-01"), as.Date("2020-01-01"), by="years")
+  years<- data.table(years)
+  count_table = data.table()
+  count_table$year= format(years$years,"%Y")
+  count_table$nominated_members = 0
+  for(i in 1:nrow(data)){
+    for(j in 1:nrow(years)){
+      if(grepl(format(years$years[j], "%Y"),data$yearlist[i])){
+        count_table[year == format(years$years[j], "%Y"),]$nominated_members[1]=count_table[year == format(years$years[j], "%Y"),]$nominated_members[1]+1
+      }
+    }
+    
+  }
+  return(count_table)
 }

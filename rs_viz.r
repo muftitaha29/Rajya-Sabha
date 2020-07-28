@@ -1,6 +1,8 @@
 setwd('~/Documents/GitHub/Rajya-Sabha/')
 library(data.table)
 library(plotly)
+library(dict)
+
 
 Members_Cleaned<-fread('rs_cleaned.csv')
 Members_Cleaned_Blank = Members_Cleaned[party_normalized=='' & party!='NOM.' & party!='O'
@@ -67,13 +69,19 @@ sessions<- read.csv("sessions_rs.csv")
 barplot(Members_Cleaned$party_normalized,xlab="Party",ylab="Numer of Member terms served")
 
 
-nominated<- subset(Members_Cleaned, party_normalized=='NOMINATED')
+nominated<- subset(Members_Cleaned, party=='NOM.')
 nominated<- data.table(nominated)
+
+# remove this once all data has been cleaned
+nominated$vacation_date[90] = nominated$term_end[90]
 # added get_year_list script to helper.r 
 nominated_members_with_year_list = get_year_list(nominated)
 
-
-
+# get the number of nominated members for each year to create viz 
+nominated_count_yearwise = get_year_wise_count(nominated_members_with_year_list)
+barplot(nominated_count_yearwise$nominated_members,xlab="Year",
+        ylab="Number of Nominated Members in Rajya Sabha",
+        names.arg = nominated_count_yearwise$year)
 
 #### #CODE FOR ADDING YEAR DATA IN PYTHON #### 
 
