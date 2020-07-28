@@ -63,7 +63,7 @@ barplot(Members_Cleaned$party_normalized,xlab="Party",ylab="Numer of Member term
 barplot(y$N,xlab="Party",ylab="Numer of Member terms served")
 y<- table(y)
 barplot(y,xlab="Party",ylab="Numer of Member terms served",col="Members_Cleaned$party_normalized",)
-sessions<- read.csv("sessions_RS.csv")
+sessions<- read.csv("sessions_rs.csv")
 barplot(Members_Cleaned$party_normalized,xlab="Party",ylab="Numer of Member terms served")
 
 
@@ -73,12 +73,14 @@ years<- seq(as.Date("1952-01-01"), as.Date("2020-01-01"), by="years")
 years<- data.table(years)
 nominated$yearlist= ''
 for (i in 1:nrow(nominated)){
+  year_list = ''
   for (j in 1: nrow(years)){
-if (years$years[j] > nominated$term_start[i] && years$years[j] < nominated$vacation_date[i])
-  {
-  append(nominated$yearlist[i],format(years$years[j], "%Y"))
- }
-}
+    if (years$years[j] > nominated$term_start[i] && years$years[j] < nominated$vacation_date[i])
+      {
+      year_list = paste0(year_list,",",format(years$years[j], "%Y"))
+      }
+  }
+  nominated$yearlist[i] = year_list
 }
 
 
