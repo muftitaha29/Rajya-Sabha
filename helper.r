@@ -214,10 +214,7 @@ get_70s_data <- function(allmembers){
   Members7[name_of_member=='Mandal Shri Bhupendra Narayan',]$party_normalized='Bharatiya Lok Dal'
   Members7[name_of_member=='Mathur Shri Jagdish Prasad',]$party_normalized='Bhartiya Janata Party'
   Members7[name_of_member=='Mohinder Kaur Smt.',]$party_normalized='Bhartiya Janata Party'
-  Members7[name_of_member=='Tombi Shri Salam',]$party_normalized='Manipur People's Party'
-  
-  
-  
+  Members7[name_of_member=='Tombi Shri Salam',]$party_normalized='Manipur People\'s Party'
   return(Members7) 
 }
 
