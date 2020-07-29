@@ -2,7 +2,7 @@
 #have to clean four dates where century changes for vacation date changes
 #have to clean NA's for vacation dates, reasons, 
 #terms starts and term ends - Kshatriya Shri Shivpratap
-
+#Normalized Parties - Others, Blanks
 
 clean_members_data <- function(allmembers){
   allmembers <- separate(allmembers,term_from_to, c("term_start", "term_end"), " ", TRUE, TRUE) #to separate the term column
@@ -55,6 +55,46 @@ get_50s_data <- function(allmembers){
   Members5[party=='INC',]$party_normalized='INDIAN NATIONAL CONGRESS'
   Members5[party=='ML',]$party_normalized='MUSLIM LEAGUE'
   Members5[party=='CPI(M)',]$party_normalized='COMMUNIST PARTY OF INDIA (MARXIST)'
+  
+  Members5[name_of_member=='Kamta Singh Shri',]$party_normalized='Swatantra Party'
+  Members5[name_of_member=='Kishen Chand Shri',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Kulkarni Shri Gajanan Ramrao',]$party_normalized='Congress'
+  Members5[name_of_member=='Manjuran Shri Mathai',]$party_normalized='Socialist Party'
+  Members5[name_of_member=='Misra Shri Chandragopal Gajadharprasad.',]$party_normalized='Kisan Mazdoor Praja Party'
+  Members5[name_of_member=='Mohanty Shri Surendra',]$party_normalized='Congress (I)'
+  Members5[name_of_member=='Mookerjee Dr. Radha Kumud',]$party_normalized='Nominated'
+  Members5[name_of_member=='Munshi Shri Arman Ali',]$party_normalized='Ganatantrik Sangh'
+  Members5[name_of_member=='Narendra Deva Shri',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Niranjan Singh Shri',]$party_normalized='Congress'
+  Members5[name_of_member=='Paliwal Shri Tika Ram',]$party_normalized='Congress'
+  Members5[name_of_member=='Parameswaran Shri B.',]$party_normalized='Congress'
+  Members5[name_of_member=='Parvathi Krishnan Smt.',]$party_normalized='Communist Party'
+  Members5[name_of_member=='Patel Shri Dahyabhai V.',]$party_normalized='Swatantra Party'
+  Members5[name_of_member=='Patel Shri Harihar',]$party_normalized='Ganatantra Parishad'
+  Members5[name_of_member=='Sinha Shri Ganga Sharan',]$party_normalized='Nominated'
+ 
+  Members5[name_of_member=='Ansari Shri Faridul Haq',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Basavapunnaiah Shri Makkineni',]$party_normalized='Commmunist Party of India'
+  Members5[name_of_member=='Bhanj Deo Shri Prafulla Chandra',]$party_normalized='Ganatantra Parishad'
+  Members5[name_of_member=='Bose Dr. Atindra Nath',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Dave Shri Rohit Manushankar',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Deshmukh Shri Narsinghrao Balbhimrao',]$party_normalized='Peasants and Workers Party'
+  Members5[name_of_member=='Dube Shri Baij Nath',]$party_normalized='Socialist Party'
+  Members5[name_of_member=='Dwivedy Shri Surendranath',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Ghose Shri Bimal Comar',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Gour Dr. Raj Bahadur',]$party_normalized='Commmunist Party of India'
+  Members5[name_of_member=='Khobragade Shri Bhaurao Dewaji',]$party_normalized='Republican Party of India'
+  Members5[name_of_member=='Patnaik Shri Dibakar',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Rajah Shri H. D.',]$party_normalized='Republican Party of India'
+  Members5[name_of_member=='Rath Shri Abhimanyu',]$party_normalized='Ganatantra Parishad'
+  Members5[name_of_member=='Reddy Shri C. G.',]$party_normalized='Socialist Party'
+  Members5[name_of_member=='Reddy Shri Mulka Govinda',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Singh Shri Devendra Prasad',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Sinha Shri Maheswar Prasad Narain',]$party_normalized='Socialist Party'
+  Members5[name_of_member=='Suryanarayana Shri Kommareddi',]$party_normalized='Kisan Mazdoor Praja Party'
+  Members5[name_of_member=='Venkatanarayana Shri Pydah',]$party_normalized='Praja Socialist Party'
+  Members5[name_of_member=='Vijaya Raje Kunwarani',]$party_normalized='Janata Party'
+  
   return(Members5)
 }
 
@@ -86,7 +126,44 @@ get_60s_data <- function(allmembers){
   Members6[party=='SAD',]$party_normalized='SHIROMANI AKALI DAL'
   #Rajnarain Shri	- pdf says Janata party
   #Chandrasekharan Shri K.- Socialist Party (Kerala)
-  return(Members6)
+
+  
+  Members6[name_of_member=='Kapoor Shri Giriraj Kishore',]$party_normalized='Jan Sangh'
+  Members6[name_of_member=='Khandekar Shri Rameshehandra Shankarrao',]$party_normalized='Praja Socialist Party'
+  Members6[name_of_member=='Kureel Shri Piare Lall alias Piare Lall Talib Unnavi',]$party_normalized='Congress(I)'
+  Members6[name_of_member=='Lal Prof. Mukut Behari',]$party_normalized='Praja Socialist Party'
+  Members6[name_of_member=='Limaye Shri Shripad Krishna',]$party_normalized='Lal Nishan Organisation'
+  Members6[name_of_member=='Misra Shri Lokanath',]$party_normalized='Janta Party'
+  Members6[name_of_member=='Mohta Shri Mahendra Kumar',]$party_normalized='Swatantra Party'
+  Members6[name_of_member=='Murahari Shri Godey',]$party_normalized='Independent'
+  Members6[name_of_member=='Nafisul Hasan Shri',]$party_normalized='Congress'
+  Members6[name_of_member=='Naicker Shri M.A. Manickavelu',]$party_normalized='Congress'
+  Members6[name_of_member=='Naidu Ms. M.L. Mary',]$party_normalized='Congress'
+  Members6[name_of_member=='Narayan Shri M.D.',]$party_normalized='Independent'
+  Members6[name_of_member=='Narayanappa Shri Sanda',]$party_normalized='Congress (O)'
+  Members6[name_of_member=='Nehru Smt. Uma',]$party_normalized='Congress'
+  Members6[name_of_member=='Niranjan Singh Shri',]$party_normalized='Congress'
+  Members6[name_of_member=='Oberoi Shri Mohan Singh',]$party_normalized='Bharatiya Kranti Dal'
+  Members6[name_of_member=='Pahadia Shri Jagannath Prasad',]$party_normalized='Congress'
+  Members6[name_of_member=='Parthasarathy Prof.(Smt) G.',]$party_normalized='Congress'
+  Members6[name_of_member=='Parthasarathy Shri R.T.',]$party_normalized='SCongress (O)'
+  Members6[name_of_member=='Patel Shri Dahyabhai V.',]$party_normalized='Swatantra Party'
+  Members6[name_of_member=='Patel Ms. Maniben Vallabhbhai',]$party_normalized='Congress'
+  Members6[name_of_member=='Patel Shri Sundarmani',]$party_normalized='Swatantra Party'
+  Members6[name_of_member=='Patil Shri Udhavrao Sahebrao',]$party_normalized='Peasants and Workers Party'
+  Members6[name_of_member=='Prithwi Nath Shri',]$party_normalized='Bharatiya Kranti Dal'
+  Members6[name_of_member=='Ramaswamy Shri V. V.',]$party_normalized='Congress'
+  Members6[name_of_member=='Reddy Shri J. C. Nagi',]$party_normalized='Congress (O)'
+  Members6[name_of_member=='Reddy Shri Mulka Govinda',]$party_normalized='Congress'
+  Members6[name_of_member=='Sinha Shri Ganga Sharan',]$party_normalized='Nominated'
+  Members6[name_of_member=='Basavapunnaiah Shri Makkineni',]$party_normalized='Commmunist Party of India'
+  Members6[name_of_member=='Chandrasekharan Shri K.',]$party_normalized='Socialist Party'
+  Members6[name_of_member=='Dar Shri Abdul Ghani',]$party_normalized='Progressive Independent Party'
+  Members6[name_of_member=='Desai Shri Dajiba Balwantrao',]$party_normalized='Peasants and Workers Party'
+  Members6[name_of_member=='Gaikwad Shri B K',]$party_normalized='Republican Party of India'
+  Members6[name_of_member=='Rajnarain Shri',]$party_normalized='Socialist Party'
+  Members6[name_of_member=='Vajpayee Shri Atal Bihari',]$party_normalized='Jan Sangh'
+    return(Members6)
   
 }
 
@@ -114,6 +191,33 @@ get_70s_data <- function(allmembers){
   Members7[party=='SAD',]$party_normalized='SHIROMANI AKALI DAL'
   Members7[party=='BLD',]$party_normalized='Bharatiya Lok Dal'
   Members7[party=='PSP',]$party_normalized='Praja Socialist Party'
+  
+  Members7[party=='JAN',]$party_normalized='Janata Party'
+  Members7[party=='JP',]$party_normalized='Janata Party'
+  Members7[name_of_member=='Mishra Shri Kalraj',]$party_normalized='Bhartiya Janata Party'
+  
+  
+  Members7[name_of_member=='Khan Shri Ghayoor Ali',]$party_normalized='Lok Dal'
+  Members7[name_of_member=='Lotha Shri Khyomo',]$party_normalized='Congress (I)'
+  Members7[name_of_member=='Patel Shri Dahyabhai V.',]$party_normalized='Swatantra Party'
+  Members7[name_of_member=='Saha Shri Surajmal',]$party_normalized='Jana Congress'
+  Members7[name_of_member=='Bhabhra Shri Hari Shankar',]$party_normalized='Bhartiya Janata Party'
+  Members7[name_of_member=='Chandrasekharan Shri K.',]$party_normalized='Socialist Party'
+  Members7[name_of_member=='Deo Shri K.P. Singh',]$party_normalized='Bharatiya Lok Dal'
+  Members7[name_of_member=='Dhulap Shri Krishnarao Narayan',]$party_normalized='Peasants and Workers Party'
+  Members7[name_of_member=='Goray Shri N G',]$party_normalized='Socialist Party'
+  Members7[name_of_member=='Gupta Shri Ram Lakhan Prasad',]$party_normalized='Bhartiya Janata Party'
+  Members7[name_of_member=='Jagbir Singh Shri',]$party_normalized='Lok Dal'
+  Members7[name_of_member=='Joshi Shri Jagannathrao',]$party_normalized='Bhartiya Janata Party'
+  Members7[name_of_member=='Lakhan Singh Shri',]$party_normalized='Bhartiya Janata Party'
+  Members7[name_of_member=='Mahavir Dr. Bhai',]$party_normalized='Bhartiya Janata Party'
+  Members7[name_of_member=='Mandal Shri Bhupendra Narayan',]$party_normalized='Bharatiya Lok Dal'
+  Members7[name_of_member=='Mathur Shri Jagdish Prasad',]$party_normalized='Bhartiya Janata Party'
+  Members7[name_of_member=='Mohinder Kaur Smt.',]$party_normalized='Bhartiya Janata Party'
+  Members7[name_of_member=='Tombi Shri Salam',]$party_normalized='Manipur People's Party'
+  
+  
+  
   return(Members7) 
 }
 
