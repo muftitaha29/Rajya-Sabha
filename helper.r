@@ -50,7 +50,7 @@ get_50s_data <- function(allmembers){
   Members5[party=='Congress',]$party_normalized='INDIAN NATIONAL CONGRESS'
   Members5[party=='CPI',]$party_normalized='Communist Party of India'
   Members5[party=='J&KNC',]$party_normalized='Jammu & Kashmir National Conference'
-  Members5[party=='NOM',]$party_normalized='NOMINATED'
+  Members5[party=='NOM.',]$party_normalized='NOMINATED'
   Members5[party=='IND.',]$party_normalized='INDEPENDENT'
   Members5[party=='INC',]$party_normalized='INDIAN NATIONAL CONGRESS'
   Members5[party=='ML',]$party_normalized='MUSLIM LEAGUE'
@@ -146,7 +146,7 @@ get_60s_data <- function(allmembers){
   Members6[name_of_member=='Oberoi Shri Mohan Singh',]$party_normalized='Bharatiya Kranti Dal'
   Members6[name_of_member=='Pahadia Shri Jagannath Prasad',]$party_normalized='Congress'
   Members6[name_of_member=='Parthasarathy Prof.(Smt) G.',]$party_normalized='Congress'
-  Members6[name_of_member=='Parthasarathy Shri R.T.',]$party_normalized='SCongress (O)'
+  Members6[name_of_member=='Parthasarathy Shri R.T.',]$party_normalized='Congress (O)'
   Members6[name_of_member=='Patel Shri Dahyabhai V.',]$party_normalized='Swatantra Party'
   Members6[name_of_member=='Patel Ms. Maniben Vallabhbhai',]$party_normalized='Congress'
   Members6[name_of_member=='Patel Shri Sundarmani',]$party_normalized='Swatantra Party'
@@ -257,10 +257,13 @@ get_80s_data<-function(allmembers){
   Members8[party=='JD(S)',]$party_normalized='Janata Dal (Secular)'
   Members8[party=='SSP',]$party_normalized='SIKKIMSAGRAM PARISHAD'
   
-  Members8[name_of_member=='Mahabir Prasad Dr.',]$party_normalized='JANTA PARTY'
-  Members8[name_of_member=='Mahishi Dr.(Smt.) Sarojini',]$party_normalized='JANTA PARTY'
-  Members8[name_of_member=='Reddy Shri P. Babul',]$party_normalized='JANTA PARTY'
-  Members8[name_of_member=='Yadav Shri Hukmdeo Narain',]$party_normalized='JANTA PARTY'
+  Members8[name_of_member=='Mahabir Prasad Dr.',]$party_normalized='JANATA PARTY'
+  Members8[name_of_member=='Mahishi Dr.(Smt.) Sarojini',]$party_normalized='JANATA PARTY'
+  Members8[name_of_member=='Reddy Shri P. Babul',]$party_normalized='JANATA PARTY'
+  Members8[name_of_member=='Yadav Shri Hukmdeo Narain',]$party_normalized='JANATA PARTY'
+  Members8[name_of_member=='Gopalan Shri K.	',]$party_normalized='Janata Party (G)'
+  Members8[name_of_member=='Goswami Shri Biswa',]$party_normalized='Janata Party'
+  
   return(Members8)
 }
 
@@ -287,7 +290,7 @@ get_90s_data <-function(allmembers){
   Members9[party=='DMK',]$party_normalized='DRAVIDA MUNNETRA KAZHAGAM'
   Members9[party=='IND.',]$party_normalized='INDEPENDENT'
   Members9[party=='CPI',]$party_normalized='COMMUNIST PARTY OF INDIA'
-  Members9[party=='NOM',]$party_normalized='NOMINATED'
+  Members9[party=='NOM.',]$party_normalized='NOMINATED'
   Members9[party=='RJD',]$party_normalized='RASHTRIYA JANATA DAL'
   Members9[party=='BSP',]$party_normalized='BAHUJAN SAMAJ PARTY'
   Members9[party=='AIADMK',]$party_normalized='ALL INDIA ANNA DRAVIDA MUNNETRA KAZHAGAM'
